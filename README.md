@@ -30,63 +30,65 @@ intercepted events  from AWS services
 EX: instance start / code build fails/s3 / TA
 Can interceptedd any	API calls with cloud watch integrations
 
-cw events - > target
-targets: 
-Compute - lambda./ batch job/ ecs task / faget container
-orchestraions - pipelien
-integration - sqs sns kinisis
-Maintainence - SSM Ec2 action	
 
-#CW Logs 
-How to get data - SDK , cw logs agent / cw unified agent
-Interations: Elastic beanstalk collects logs and send to cw logs
+#CW events - > target
+targets: 
+Compute - lambda./ batch job/ ECS task / Farget container
+orchestraions - pipelien
+integration - SQS, SNS kinesis
+Maintenance - SSM Ec2 action	
+
+# CW Logs 
+How to get data - SDK, CW logs agent / CW unified agent
+Interactions: Elastic beanstalk collects logs and sendsthemCWto cw logs
 ECS container logs
-AWS lambda- 
+AWS Lambda- 
 VPC flow logs
-cloudtrail
-Api gateway
-CW logs agent - installed to ec2/ vms on prepm
-Route53 dns logs
+cloud trail
+API gateway
+CW logs agent - installed to ec2/ VM’s on-premises
+Route53 DNS logs
 
 - Log groups --> log streams --> logs
 Log expiration policies
-Encrypt logs wit KMS
-Send logs to - s3- (EXPORTS)
-kinisis data streams
+Encrypt logs with KMS
+Send logs too - s3- (EXPORTS)
+kinesis data streams
 kinisis data firehose
 Elasticsearch
 Lambda
 
-Metric filters and filter expression
--- eg specific ip in logs
--- number of occerences of word error
+##Metric filters and filter expression
+-- eg specific IP in logs
+-- the number of occurrences of word error
 MF used to trigger alarms
 
 Cloudwatch logs insights where you can see and query logs
 
 CW logs --> S3 (Encrypted to AES256)/sse s3 only -- log data takes 12 hr to available -- CreateExportTask -- not real tim
-Real time -- use Logs subscription 
+Real-time -- use Logs subscription 
 
-Cloudwatch log subscription:: 
+##Cloudwatch log subscription:: 
 Logs --> subscription filter:
-	- managed lambda function --> ES (Real time)
-	- Kinesis data firehose --> ES // S3  (near real time)
+	- managed lambda function --> ES (Real-time)
+	- Kinesis data firehose --> ES // S3  (near real-time)
 	- Kinesis data stream -- KDF/KDA/EC2/lambda
 	
-Multi account multi region log aggregation ::
+Multi-account multi-region log aggregation::
 CW logs --> subscription filter ->> ||| -->> kinesis data streams --> firehose --> s3
 	
 	
-Cloudwatch logs angent vs unified agent
-With cloudwatch log agent we can send only to cw logs and it is old version
-With unified agent send logs to cw logs also metrics such as ram and process and can have central config in ssm peramater store
+Cloudwatch logs agent vs unified agent
+With the cloudwatch log agent, we can send only to CW logs and it is the old version
+With unified agent sends logs to CW logs also metrics such as ram and process and can have a central config in the SSM parameter store
 
-Batch send:
+##Batch send:
 batch_count -- default 1000 -- min == 1
 batch_duration -- default and min 5000ms
-batch_size: max size of log - default max 1mb
+batch_size: max size of log - default max 1MB
 
-Both agent cannot send to Kinesis -- for this you need to use kinesis agent insted
+Both agents cannot send to Kinesis -- for this,s you need to use kinesis insted
+
 
 
 
