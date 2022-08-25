@@ -1,12 +1,11 @@
 # awscertprep
 # AWS Certification Preperation
-AWS Certified SA Professional 
+# AWS Certified SA Professional 
 
 * Cloudwatch
 
 #matrics
 Provided by many services.
-
 EC2 standard monitoring- 5 mins, detailed monitoring: 1 min - CPU /network/ram is not there - use custom metrics
 custom metric - create by yourself 1- min standard || - 1 sec - high resolution
 
