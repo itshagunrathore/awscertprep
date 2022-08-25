@@ -1,6 +1,5 @@
 # awscertprep
-# AWS Certification Preperation
-# AWS Certified SA Professional 
+# AWS Certification Preperation AWS Certified SA Professional 
 
 * Cloudwatch
 
@@ -16,11 +15,11 @@ can trigger actions :
 	- SNS
 Alarm events can be intercepted by CW events.
 
-# Dashboards
+#Dashboards
 - Display matrix and alarms
 - can show matrics of multiple regions
 
-# Integrations - 
+#Integrations - 
 CW -- ec2 action --> status check ->> recover
 CW -- autoscaling 
 cw -- sns / fanout/ sqs - lambda
