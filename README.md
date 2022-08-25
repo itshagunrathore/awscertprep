@@ -2,36 +2,35 @@
 # AWS Certification Preperation
 AWS Certified SA Professional 
 
-
-Cloudwatch
+* Cloudwatch
 
 #matrics
 Provided by many services.
 
-EC2 standerd monitoring- 5 mins, detailed monitoring : 1 min - cpu /netwrk / ram is not there - use custom metrics
-custom metric - create by yourself 1- min standerd || - 1 sec - high resolution
+EC2 standard monitoring- 5 mins, detailed monitoring: 1 min - CPU /network/ram is not there - use custom metrics
+custom metric - create by yourself 1- min standard || - 1 sec - high resolution
 
-Clouwatch Alarms
+#Clouwatch Alarms
 can trigger actions :
 	- EC2 action : reboot /stop /terminate /recover 
 	- autoscaling 
-	- sns
-Alarm events can be intersepted by cw events.
+	- SNS
+Alarm events can be intercepted by CW events.
 
-Dashboards
-- Dispay matrix and alarms
+# Dashboards
+- Display matrix and alarms
 - can show matrics of multiple regions
 
-Interations - 
-cw -- ec2 action --> status check ->> recover
-cw -- autoscaling 
+# Integrations - 
+CW -- ec2 action --> status check ->> recover
+CW -- autoscaling 
 cw -- sns / fanout/ sqs - lambda
-cw alarm - cw events -> kinisis / step function / lambda function 
+CW alarm - CW events -> kinisis / step function / lambda function 
 
-Cloudwatch Events-
-intersepted events  from aws services
-EX: instance start / codebuild fails/s3 / TA
-Can intersepted any	api calls with cloudwatch integrations
+# Cloudwatch Events-
+intercepted events  from AWS services
+EX: instance start / code build fails/s3 / TA
+Can interceptedd any	API calls with cloud watch integrations
 
 cw events - > target
 targets: 
