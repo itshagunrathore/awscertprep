@@ -89,147 +89,142 @@ batch_size: max size of log - default max 1MB
 
 Both agents cannot send to Kinesis -- for this,s you need to use kinesis insted
 
-
-
-
-XRAY
+# XRAY
 --Visual analysis of application and tracing capabilities
 latency / err rates
 Trace request across microservices -- integrations 
-EC2 -- install the xray agent .
-ECS -- install agent or use xray docker
+EC2 -- install the Xray agent.
+ECS -- install an agent or use Xray docker
 Lambda 
 Beanstalk -- automatic install available
-Api gateway -- helpful for errors
+API gateway -- helpful for errors
 
 Extra agents
 
--- New section 
+-- New section --
+
 ## Cost allocation tags
 We can enable detailed costing reports
-Just like tags but they show up as a coloumn in reports
+Just like tags but they show up as a column in reports
 
-2 types -- AWS generated CA tags - automatic applied -- aws:createdBy -- not applied to resources that re previously created
+2 types -- AWS generated CA tags - automatically applied -- aws:createdBy -- not applied to resources that re previously created
 User tags - prefix defined by user (user:xxx)
 
-Just appeare in billing console
-Takes upto 24 hrs for the tags to show up in report
+Just appear in the billing console
+Takes up to 24 hrs for the tags to show up in a report
 
 
-Tag Editer
--- manage tag for multiple resouces at once
+* Tag Editor
+-- manage tag for multiple resources at once
 add/update/delete tags
 search for tagged and untagged resources
 
-Trusted advisor
-High level assistment of account 
-analise and provide recomendations
+# Trusted Advisor
+High-level assessment of account 
+analyse and provide recommendations
 Cost optimization
 Performace
 Security
 Fault tolerance
 Service limits
 
-Core checks and recommendation
+* Core checks and recommendation
 YOu have access to more checks as per subscription
 Can enable weekly notification from console
 
 FUll TA available for business and enterprise support plans
-- programatic access / set cw alarms on limits
+- programatic access / set CW alarms on limits
 
-Support plans
+* Support plans
 basic - developer - Business - enterprise
 
-TA can check s3 bucket public but cannot check s3 objects public -- for this cw events / s3 events/ insted
+TA can check s3 bucket public but cannot check s3 objects public -- for this CW events / s3 events/ instead
 
-Service limits -- cases manually created
-For monitoring SL you need business of enterprise plan
+* Service limits -- cases manually created
+For monitoring SL you need a business or enterprise plan
 API Cannot change limits 
 
 for this
-AWS Service quotas is a new service and has an API
+AWS Service quotas is a new service and have an API
  
-#Ec2 Cost savings
+# Ec2 Cost savings
 Ec2 launch types --
-Ondemand -- short workload
+On-demand -- short workload
 Spot -- cheap - short workloads
 Reserved -- 1 yr - 
-convertable reserved
+convertible reserved
 Dedicated instances -- no hardware share
 Dedicated host -- your instance placement book a server
-	Host affinity -- instence reboot on same host
-	Great for software licences that operate at core level
+	Host affinity -- instance reboot on the same host
+	Great for software licenses that operate at the core level
 
-Savings plan
-	New pricing model -- wil replace reserved instances
+* Savings plan
+	New pricing model -- will replace reserved instances
 	EC2 instance savings plan -- 72% 
-		Commit to a certen type of usage like 10 usd /houe for 1 yr -- above that on demand prices will apply
+		Commit to a certain type of usage like 10 USD /hour for 1 yr -- above that on-demand prices will apply
 		can select any family
-		can select any os / tenency /size
-	Compute savings plan -- 66% same as convertable RI
-		move btn family / region/ compute type os and tenancy --ec2 farget lambda
+		can select any os / tenancy /size
+	Compute savings plan -- 66% same as Convertable RI
+		move between family / region/ compute type os and tenancy --ec2 farget lambda
 	Sage maker savings plan -- 64% on sagemaker
 	
 	
-S3 Cost savings:
+* S3 Cost savings:
 S3 storage class- S3 standerd GP - S3 standaerdIA
-One zone IA, Intelligent tiering, Glacier Instent Retrival
+One zone IA, Intelligent tiering, Glacier Instant Retrieval
 Glacier Flexible retrieval, Deep archive
 
-S3 lifecycle configurations
+# S3 lifecycle configurations
 
 1. S3 select and glacier select.
 2. Sr lifecycle rule
 3. compress objects
-4. S3 Requester pays-- Requestser will pay the download cost / network - S3 bucket policies - auth via iam - assumed cross account role
+4. S3 Requester pays-- Requestser will pay the download cost/network - S3 bucket policies - auth via iam - assumed the cross-account role
 
-Budgets --
+# Budgets --
 Usage - cost - reservation - savings plan
-
 RI utilization 
-
 5 sns notification per budget
+filter by service, linked account, region, az, API, et
+The First 2 budgets are free
 
-filter by service , linedaccount, region , az , api etc
-
-First 2 budget are free
-
-Cost Explorer:
-Visalize understand and manager data ,
-monthly. hrly resource level
-Choose optiaml plan
+# Cost Explorer:
+Visalize understand and manage data,
+monthly. Hourly resource level
+Choose optimal plan
 Create custom reports
-forcast usage feature 12 months
+forecast usage feature 12 months
 
 
-Other services
-Cloud search
-Alexa for business ,lex connect	
-AWS workspaces - managed VDI , secure cloud desktop-- secure- Microsoft AD - 
-	Workspaces application manager - cotainarize apps - deploy an manage, procision scale, keep updated , 
+# Other services
+Cloud Search
+Alexa for business, lex connect	
+# AWS workspaces - 
+	managed VDI, secure cloud desktop-- secure- Microsoft AD - 
+	Workspaces application manager - containerized apps - deploy and manage, provision scale, keep updated, 
 	Windows updates - by default workspaces are configured to  install software updates 
 	Maintainance windows
 		always on workspaces
 		auto stop workspaces
-		manual maintainence
-App stream 2.0 
+		manual maintenance
+# App stream 2.0 
 	Desktop application streaming service
-	The app is dilivered from within web browser
+	The app is delivered from within a web browser
 	
-The mechnical Turk
-	Crowdsourcing marketplace to perform simple human task
-	Distributed virtual workforce --  Integrated with SWF but not not with SF
-	Like - restaurant name is not perfect - humans will go and check update your database - they get paid
-	Data collection / business processing
+# The mechanical Turk
+	Crowdsourcing marketplace to perform a simple human task
+	Distributed virtual workforce --  Integrated with SWF but not with SF
+	Like - For a restaurant name is not perfect - humans will go and check and update your database - they get paid
+	Data collection/business processing
 	
-AWS Device Farm
-	Running big application --> test with many devices ?
+# AWS Device Farm
+	Running a big application --> test with many devices?
 	Test run across real browsers and real mobile devices.
-	Fully automates - improve quality - generate automated vids and logs - remotely logun to devices for logging
+	Fully automates - improves quality - generate automated vids and logs - remotely logs to devices for logging
 	
-Amazon macie
-	Fully managed data security / privicy service that uses machine learning and pattern matching to discovr and protect your sensative data
-	Alert you around PII data --> s3 buckets - macie - event bridge - sns / lambda
+# Amazon Macie
+	Fully managed data security / private service that uses machine learning and pattern matching to discover and protect your sensitive data
+	Alert you around PII data --> s3 buckets - Macie - event bridge - sns / lambda
 
 Amazon transcribe
 	Convert - speech to text - deep learing - customer service- gernerate matadata
